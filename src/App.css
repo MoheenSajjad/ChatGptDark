@@ -1,0 +1,112 @@
+.dark_mode {
+    margin-top: -11px;
+    margin-left: 0px;
+    margin-bottom: 8px;
+}
+
+
+.emoji_label{
+ width: 75px;
+    height: 29px;
+    position: relative;
+    display: flex;
+    background: #202633;
+    color: #868FA7;
+    border-radius: 27px;
+    /* box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4); */
+    cursor: pointer;
+    transition: 0.3s;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 6px;
+    justify-content: space-between;
+}
+
+.dark_mode_label {
+   width: 81px;
+    height: 41px;
+    /* rotate: -90deg; */
+    position: relative;
+    display: flex;
+    background: #3F424A;
+    border-radius: 12px;
+    /* box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4); */
+    cursor: pointer;
+    transition: 0.3s;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px;
+    justify-content: space-between;
+}
+.dark_mode_label:after {
+    content: "";
+    width: 30px;
+    height: 34px;
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    background: #ffffff;
+    border-radius: 12px;
+    /* box-shadow: linear-gradient(180deg, #1E1F22 48.87%, rgba(30, 31, 34, 0.37) 83.14%, rgba(30, 31, 34, 0) 100%); */
+    transition: 0.3s;
+    z-index: -1;
+}
+.dark_mode_input ,.emoji_input{
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+.dark_mode_input:checked + .dark_mode_label {
+    background: #fff;
+}
+
+
+
+
+.dark_mode_input:checked + .dark_mode_label:after {
+    left: 62px;
+    transform: translateX(-55%);
+    background: linear-gradient(180deg, #777, #3a3a3a);
+}
+.dark_mode_label:active:after {
+    width: 30px;
+}
+
+.dark_mode_label img {
+    position: absolute;
+    width: 20px;
+    z-index: 100;
+}
+
+.dark_mode_label #sun {
+    left: 56px;
+    transition: 0.3s;
+    color: gray;
+}
+
+.dark_mode_label #moon {
+  rotate: -252deg;
+    left: 13px;
+    transition: 0.3s;
+    /* color: black !important; */
+}
+
+
+
+
+.emoji_input:checked + .emoji_label #smile{
+    color: gold ;
+}
+.emoji_input:checked + .emoji_label #sad{
+    color: #3F424A;
+}
+.emoji_input:not(:checked) + .emoji_label #sad{
+    color: rgba(255, 166, 0, 0.63);
+}
+
+.dark_mode_input:checked + .dark_mode_label #sun {
+    fill: rgba(0, 0, 0, 0.678);
+}
+.dark_mode_input:checked + .dark_mode_label #moon {
+    fill: #fff;
+}
